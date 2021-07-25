@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+
+@font-face {
+  font-family: "wc_mano_negra_btaregular";
+  src: url("WCManoNegraBta-webfont.eot");
+  src: url("WCManoNegraBta-webfont.eot?#iefix") format("embedded-opentype"),
+    url("WCManoNegraBta-webfont.woff2") format("woff2"),
+    url("WCManoNegraBta-webfont.woff") format("woff"),
+    url("WCManoNegraBta-webfont.ttf") format("truetype"),
+    url("WCManoNegraBta-webfont.svg#wc_mano_negra_btaregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* -------------------------------------------------- */
+
+:root {
+  --font-wc: "wc_mano_negra_btaregular";
+}
+
+/* -------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* -------------------------------------------------- */
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Aleo", serif;
+  font-size: 1.4rem;
+  color: rgb(73, 72, 72);
+}
+
+/* ------------------ Pre-set ------------------- */
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+span {
+  display: inline-block;
+}
+
+/* ------------------ Re-useable ---------------- */
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+}
+
+/* ------------------ Navbar -------------------- */
+
+.navbar {
+  padding: 3rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item:not(:first-child) {
+  margin-left: 3rem;
+}
+
+.nav-link {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: tomato;
+}
+
+/*------ Hamburger ------*/
+
+.hamburger {
+  position: relative;
+  width: 4rem;
+  height: 3.5rem;
+  /* background: rgb(243, 240, 240); */
+  background-color: #f34949;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  /*  */
+  width: 0;
+  opacity: 0;
+}
+
+.checkbox {
+  position: absolute;
+  width: 4rem;
+  height: 3.5rem;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0;
+  border-radius: 3px;
+  /*  */
+  width: 0;
+  opacity: 0;
+}
+
+.ham-lines,
+.ham-lines::before,
+.ham-lines::after {
+  position: relative;
+  width: 2.5rem;
+  height: 2px;
+  background-color: rgb(221, 217, 217);
+  transition: all 0.3s ease;
+}
+
+.ham-lines::before,
+.ham-lines::after {
+  position: absolute;
+  top: 7px;
+  content: "";
+}
+
+.ham-lines::before {
+  top: -7px;
+}
+
+.checkbox:checked + .ham-lines {
+  transform: rotate(135deg);
+}
+
+.checkbox:checked + .ham-lines::before,
+.checkbox:checked + .ham-lines::after {
+  top: 0;
+}
+
+.checkbox:checked + .ham-lines::after {
+  transform: rotate(90deg);
+}
+
+/* -------------- Header -------------------------- */
+
+.header {
+  background: url("../img/hero.png") center center/cover;
+  background-attachment: fixed;
+}
+
+.header-content {
+  padding: 18rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-heading {
+  font-family: var(--font-wc);
+  font-size: 6rem;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.header-p {
+  position: relative;
+  color: #d3cece;
+  letter-spacing: 1px;
+}
+
+.header-p::before,
+.header-p::after {
+  position: absolute;
+  content: "";
+  width: 40%;
+  height: 1px;
+  background-color: #d3cece;
+  top: 45%;
+}
+
+.header-p::before {
+  left: -50%;
+}
+
+.header-p::after {
+  right: -50%;
+}
+
+/* --------------- menu -------------------- */
+
+.menu {
+  border-top: 3px solid #f34949;
+}
+
+.menu-content {
+  text-align: center;
+}
+
+.menu-title {
+  width: 13rem;
+  margin: 0 auto 6rem auto;
+  padding: 2rem 3rem;
+  background-color: #f34949;
+  color: #ffffff;
+  clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 0);
+}
+
+.menu-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-column-gap: 5rem;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.box::before {
+  position: absolute;
+  height: 1px;
+  width: 30%;
+  top: 50%;
+  right: 5rem;
+  content: "";
+  background-color: rgb(192, 189, 189);
+}
+
+.box .text {
+  text-align: left;
+}
+
+.box .text h4 {
+  margin-bottom: 1rem;
+}
+
+.box .text p {
+  font-style: italic;
+}
+
+.box span {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #f34949;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 8rem;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.btn svg {
+  fill: #fff;
+}
+
+.btn:active {
+  background-color: rgb(129, 124, 124);
+  color: #fff;
+}
+
+.btn:active svg {
+  fill: #fff;
+}
+
+/* -------------- Featured ----------------------- */
+
+.featured-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 5rem;
+  margin-bottom: 15rem;
+}
+
+.feature-box img {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.food-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.yellow {
+  fill: rgb(224, 224, 35);
+}
+
+.grey {
+  fill: rgb(190, 183, 183);
+}
+
+/* ------------- Gallery ----------------- */
+
+.gallery {
+  background: #f7f4f4;
+  padding: 6rem 0;
+}
+
+.gallery-title {
+  margin-bottom: 5rem;
+}
+
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(2, 17vw);
+}
+
+.gallery-img {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover .img {
+  transform: scale(1);
+}
+
+.gallery-img-1 {
+  grid-row: 1 / -1;
+  grid-column: 1 / 2;
+}
+
+/* ---------------- Footer ---------------- */
+
+.footer {
+  background: rgb(99, 98, 98);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.footer img {
+  margin-bottom: 2rem;
+}
+
+.footer p {
+  color: #f7f4f4;
+  font-size: 1.2rem;
+}

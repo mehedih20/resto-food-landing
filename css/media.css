@@ -1,0 +1,55 @@
+@media (max-width: 676px) {
+  /* navigation */
+  .nav-list {
+    flex-basis: 100%;
+    flex-direction: column;
+    padding: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  .nav-item:not(:first-child) {
+    margin-left: 0;
+  }
+  .nav-item {
+    margin-bottom: 2rem;
+  }
+
+  .hamburger {
+    width: 4rem;
+    opacity: 1;
+  }
+  .checkbox {
+    width: 4rem;
+  }
+
+  .toogle {
+    height: 100%;
+    opacity: 1;
+    padding: 3rem 0 1rem;
+  }
+
+  .gallery-content {
+    grid-template-rows: repeat(2, 25vw);
+  }
+  .box::before {
+    width: 10%;
+  }
+
+  .header-heading {
+    font-size: 4rem;
+  }
+  
+  .header-p::before,
+  .header-p::after {
+    width: 20%;
+  }
+  .header-p::before {
+    left: -25%;
+  }
+  
+  .header-p::after {
+    right: -25%;
+  }
+
+  /* --------------------------- */
